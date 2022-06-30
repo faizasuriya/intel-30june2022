@@ -19,8 +19,11 @@ jobs:
       - name: Check Whether Docker is there or not.
         run: docker version
 
-      # - name: Set up Docer Buildlx
-      #   uses: docker/setup-build
+      - name: Set up Docer Buildlx
+        uses: docker/setup-build-action@v2
+        with:
+          driver-opts: network=host
+        
 
       - name: Loginto Dockerhub
         uses: docker/login-action@v2
@@ -32,4 +35,4 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: faizasuriyakp/mysite
+          tags: faizasuriyakp/httpapp:${{env.GITHUBVERSION}}
