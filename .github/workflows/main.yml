@@ -32,4 +32,4 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: faizasuriyakp/httpapp:${{env.GITHUBVERSION}}
+          tags: faizasuriyakp/mysite
